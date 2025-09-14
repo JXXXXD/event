@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argus Biofuels NA Summit 2025 - Photography Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .event-info {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .contacts {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            margin: 5px 0;
+        }
+
+        .progress-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .section {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.6em;
+            font-weight: normal;
+        }
+
+        .subsection {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .subsection-title {
+            font-size: 1.3em;
+            color: #495057;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .time-slot {
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .deliverable {
+            background: #d1ecf1;
+            border: 2px solid #bee5eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .deliverable-title {
+            color: #004085;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 12px 0;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .checkbox-item:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        .checkbox-item.completed {
+            opacity: 0.6;
+            background: #e8f5e9;
+        }
+
+        .checkbox-item.completed .task-text {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .task-text {
+            flex: 1;
+            color: #000;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .priority {
+            background: #dc3545;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .sponsor-alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .sponsor-alert strong {
+            color: #856404;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .do-section, .dont-section {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .do-section {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+        }
+
+        .dont-section {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+        }
+
+        .do-title {
+            color: #155724;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .dont-title {
+            color: #721c24;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .reset-btn {
+            background: #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .controls {
+                bottom: 20px;
+                right: 20px;
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+            
+            .checkbox-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📷 Argus Biofuels NA Summit 2025</h1>
+        <div class="event-info">Photography Checklist & Action Plan</div>
+        <div class="event-info">📍 Hyatt Regency Monterey Hotel and Spa</div>
+        <div class="contacts">
+            <div class="contact-item"><strong>Onsite Contact:</strong> Lilja (Lilija.Fisiuk@argusmedia.com) - 831-869-7096</div>
+            <div class="contact-item"><strong>Gallery Contact:</strong> Teri Arri (Teri.arri@argusmedia.com)</div>
+        </div>
+    </header>
+
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar">0%</div>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="completedCount">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalCount">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingCount">0</div>
+                <div class="stat-label">Remaining</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Pre-Event Checklist & Gear Prep</h2>
+        <div class="checkbox-item">
+            <input type="checkbox" id="gear1">
+            <label for="gear1" class="task-text">Charge all camera batteries and pack spares</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="gear2">
+            <label for="gear2" class="task-text">Pack lenses: wide-angle (room shots), telephoto (speakers), prime (portraits)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="gear3">
+            <label for="gear3" class="task-text">Format all memory cards and bring extras</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="gear4">
+            <label for="gear4" class="task-text">Check flash/strobes and batteries</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="gear5">
+            <label for="gear5" class="task-text">Review sponsor list and photography do's & don'ts</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Golden Rules: Do's and Don'ts</h2>
+        <div class="do-dont-grid">
+            <div class="do-section">
+                <div class="do-title">✅ DO'S: The Money Shots</div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do1">
+                    <label for="do1" class="task-text">Capture energy & engagement (smiling, laughing, clapping)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do2">
+                    <label for="do2" class="task-text">Hunt for branding (sponsor logos, exhibition booths, Argus branding)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do3">
+                    <label for="do3" class="task-text">Shoot for diversity (mix of genders, ethnicities, ages)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do4">
+                    <label for="do4" class="task-text">Go wide (conference rooms, reception areas, exhibition hall)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do5">
+                    <label for="do5" class="task-text">Get networking in action (coffee breaks, lunches, receptions)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do6">
+                    <label for="do6" class="task-text">Keep it bright (bright and airy exposure)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="do7">
+                    <label for="do7" class="task-text">Get posed shots at receptions</label>
+                </div>
+            </div>
+            <div class="dont-section">
+                <div class="dont-title">🚫 DON'TS: Shots to Avoid</div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dont1">
+                    <label for="dont1" class="task-text">DON'T shoot people eating</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dont2">
+                    <label for="dont2" class="task-text">DON'T feature people's backs (especially with backpacks)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dont3">
+                    <label for="dont3" class="task-text">DON'T leave empty seats in frame</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dont4">
+                    <label for="dont4" class="task-text">DON'T use unflattering expressions</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dont5">
+                    <label for="dont5" class="task-text">DON'T focus on static panels</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Day 1 - Monday, September 15th <span class="day-badge">8:00 AM - 6:00 PM</span></h2>
+        
+        <div class="subsection">
+            <div class="subsection-title">Early Morning</div>
+            <div class="time-slot">7:15 AM - 8:00 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-1">
+                <label for="day1-1" class="task-text">Arrive at venue at 7:15 AM<span class="priority">PRIORITY</span></label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-2">
+                <label for="day1-2" class="task-text">Call Lilja at 7:30 AM (831-869-7096) for credentials and walkthrough<span class="priority">PRIORITY</span></label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-3">
+                <label for="day1-3" class="task-text">Golf Course: Capture action shots of golfers and scenic views</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-4">
+                <label for="day1-4" class="task-text">Venue: Establishing shots of Hyatt Regency exterior and registration area</label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Morning Sessions</div>
+            <div class="time-slot">8:00 AM - 10:30 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-5">
+                <label for="day1-5" class="task-text">Registration desk shots with attendees collecting badges</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-6">
+                <label for="day1-6" class="task-text">Cover RINs Workshop audience</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-7">
+                <label for="day1-7" class="task-text">Cover SAF Focus Day audience</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-8">
+                <label for="day1-8" class="task-text">9:00 AM: Argus opening address (SAF Day)</label>
+            </div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERT:</strong> 9:10 AM - Clean Fuels Alliance America (Silver) speaker
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-9">
+                <label for="day1-9" class="task-text">9:10 AM: SAF in the balance panel with Clean Fuels Alliance speaker</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-10">
+                <label for="day1-10" class="task-text">9:50 AM: Keynote panel (SAF Day)</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #1 - By 11:00 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del1">
+                <label for="del1" class="task-text">Upload ~20 images to Google Drive for Teri Arri (registration, morning coffee, branding, engaged audiences)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Late Morning</div>
+            <div class="time-slot">10:30 AM - 1:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-11">
+                <label for="day1-11" class="task-text">10:30-11:15 AM: Networking coffee break shots</label>
+            </div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERT:</strong> 11:15 AM - Montana Renewables (Gold) and Phillips 66 (Silver) speakers
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-12">
+                <label for="day1-12" class="task-text">11:15 AM: Panel with Montana Renewables and Phillips 66 speakers</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-13">
+                <label for="day1-13" class="task-text">11:55 AM: "Clearing the skies" airlines panel</label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Lunch & Afternoon</div>
+            <div class="time-slot">12:00 PM - 3:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-14">
+                <label for="day1-14" class="task-text">12:00-1:30 PM: Networking lunch (people interacting, NOT eating)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-15">
+                <label for="day1-15" class="task-text">Capture sponsor booths: Montana Renewables, Phillips 66, Poet, Trinity Consultants, Weaver</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-16">
+                <label for="day1-16" class="task-text">1:00 PM: Main Conference opening remarks</label>
+            </div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERTS:</strong> 1:10 PM - Incubex Inc (Bronze) | 1:50 PM - Latham Watkins (Silver) & Elevate Climate (Bronze)
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-17">
+                <label for="day1-17" class="task-text">1:10 PM: Incubex Inc speaker shots</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-18">
+                <label for="day1-18" class="task-text">1:50 PM: Latham Watkins and Elevate Climate speakers</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #2 - By 3:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del2">
+                <label for="del2" class="task-text">Upload ~20 images (networking lunch, exhibition stands, early afternoon speakers)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Late Afternoon</div>
+            <div class="time-slot">3:00 PM - 5:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-19">
+                <label for="day1-19" class="task-text">2:30-3:30 PM: Coffee break networking shots</label>
+            </div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERT:</strong> 3:30 PM - Weaver (Silver) speaker
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-20">
+                <label for="day1-20" class="task-text">3:30 PM: Panel with Weaver speaker</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #3 - By 5:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del3">
+                <label for="del3" class="task-text">Upload ~20 images (afternoon sessions, audience questions, exhibitor engagement)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Evening Reception</div>
+            <div class="time-slot">5:00 PM - 6:45 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-21">
+                <label for="day1-21" class="task-text">Networking Drinks Reception: Fun, lively shots</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-22">
+                <label for="day1-22" class="task-text">People posing with drinks, laughing, groups of colleagues</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day1-23">
+                <label for="day1-23" class="task-text">Capture the atmosphere for tomorrow's morning deliverable</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Day 2 - Tuesday, September 16th <span class="day-badge">9:00 AM - 5:30 PM</span></h2>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #4 - By 8:00 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del4">
+                <label for="del4" class="task-text">Upload ~20 images from last night's drinks reception<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Morning Sessions</div>
+            <div class="time-slot">8:50 AM - 10:45 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-1">
+                <label for="day2-1" class="task-text">More registration shots (busier day)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-2">
+                <label for="day2-2" class="task-text">Argus welcome and Keynote address</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-3">
+                <label for="day2-3" class="task-text">Engaged audience members, wide room shots, speaker close-ups</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #5 - By 10:30 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del5">
+                <label for="del5" class="task-text">Upload ~20 images (registration, stage branding, audience/keynote)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Mid-Morning</div>
+            <div class="time-slot">9:50 AM - 12:15 PM</div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERT:</strong> 9:50-10:45 AM - Topsoe (Bronze) branded snack station
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-4">
+                <label for="day2-4" class="task-text">9:50-10:45 AM: Coffee break with Topsoe branded snack station</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-5">
+                <label for="day2-5" class="task-text">10:45 AM: "Dichotomy between federal vs state policies" panel</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-6">
+                <label for="day2-6" class="task-text">11:25 AM: "March of the low carbon fuel standards" panel</label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Lunch</div>
+            <div class="time-slot">12:15 PM - 1:15 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-7">
+                <label for="day2-7" class="task-text">Networking lunch: handshakes, business card exchanges, booth visits</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #6 - By 1:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del6">
+                <label for="del6" class="task-text">Upload ~20 images (networking lunch, exhibitor booths, morning panels)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Afternoon Sessions</div>
+            <div class="time-slot">1:15 PM - 3:00 PM</div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERTS:</strong> 1:15 PM - Weaver (Silver) | 2:00 PM - Montana Renewables (Gold)
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-8">
+                <label for="day2-8" class="task-text">1:15 PM: Weaver speaker shots</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-9">
+                <label for="day2-9" class="task-text">2:00 PM: Montana Renewables speaker shots</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #7 - By 3:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del7">
+                <label for="del7" class="task-text">Upload ~20 images (audience, speakers, panels from early afternoon)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Late Afternoon & Evening</div>
+            <div class="time-slot">3:00 PM - 7:00 PM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-10">
+                <label for="day2-10" class="task-text">2:40-3:25 PM: Final coffee break networking</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-11">
+                <label for="day2-11" class="task-text">Shoot the final three panels of the day</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-12">
+                <label for="day2-12" class="task-text">5:25-7:00 PM: Evening Drinks Reception</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day2-13">
+                <label for="day2-13" class="task-text">Capture fun, relaxed atmosphere for tomorrow's deliverable</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #8 - End of Day</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del8">
+                <label for="del8" class="task-text">Upload ~20 images (afternoon sessions and coffee break networking)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Day 3 - Wednesday, September 17th <span class="day-badge">9:00 AM - 1:00 PM</span></h2>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #9 - By 8:00 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del9">
+                <label for="del9" class="task-text">Upload ~20 images from last night's drinks reception<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Morning Sessions</div>
+            <div class="time-slot">9:00 AM - 10:30 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-1">
+                <label for="day3-1" class="task-text">Chairperson's opening remarks</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-2">
+                <label for="day3-2" class="task-text">First two panels of the morning</label>
+            </div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERT:</strong> 9:45 AM - Latham & Watkins (Silver) speaker
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-3">
+                <label for="day3-3" class="task-text">9:45 AM: Panel with Latham & Watkins speaker</label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Coffee Break</div>
+            <div class="time-slot">10:30 AM - 11:15 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-4">
+                <label for="day3-4" class="task-text">Final coffee break - last chance for great networking shots!</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #10 - By 11:00 AM</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del10">
+                <label for="del10" class="task-text">Upload ~20 images (morning audience shots and coffee break networking)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsection-title">Final Sessions</div>
+            <div class="time-slot">11:15 AM - 1:30 PM</div>
+            <div class="sponsor-alert">
+                <strong>SPONSOR ALERTS:</strong> 11:15 AM - Trinity Consultants (Silver) & Veriflux (Bronze) | 12:10 PM - Topsoe (Bronze)
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-5">
+                <label for="day3-5" class="task-text">11:15 AM: Trinity Consultants and Veriflux speakers</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-6">
+                <label for="day3-6" class="task-text">12:10 PM: Topsoe speaker</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-7">
+                <label for="day3-7" class="task-text">1:25 PM: Capture audience clapping during closing remarks</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-8">
+                <label for="day3-8" class="task-text">1:30-2:30 PM: Final networking lunch</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="day3-9">
+                <label for="day3-9" class="task-text">One last round of sponsor booth shots</label>
+            </div>
+        </div>
+
+        <div class="deliverable">
+            <div class="deliverable-title">📤 DELIVERABLE #11 - By End of Conference</div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="del11">
+                <label for="del11" class="task-text">Upload final batch (last sessions and lunch)<span class="priority">DEADLINE</span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Post-Event Wrap-Up</h2>
+        <div class="checkbox-item">
+            <input type="checkbox" id="post1">
+            <label for="post1" class="task-text">Curate final album: at least 2 photos of EVERY session, panel, and speaker</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="post2">
+            <label for="post2" class="task-text">Include plenty of branding, networking, and audience shots in final album</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="post3">
+            <label for="post3" class="task-text">Organize final gallery on Google Drive</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="post4">
+            <label for="post4" class="task-text">Email final gallery link to Teri Arri at Teri.arri@argusmedia.com<span class="priority">FINAL</span></label>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="exportChecklist()">📥 Export Progress</button>
+        <button onclick="importChecklist()">📤 Import Progress</button>
+        <button class="reset-btn" onclick="resetProgress()">🔄 Reset All</button>
+    </div>
+
+    <script>
+        // Initialize the checklist
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let totalCount = checkboxes.length;
+        
+        // Load saved progress from localStorage
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('argusPhotoChecklist');
+            if (savedProgress) {
+                const progress = JSON.parse(savedProgress);
+                checkboxes.forEach(checkbox => {
+                    if (progress[checkbox.id]) {
+                        checkbox.checked = true;
+                        checkbox.parentElement.classList.add('completed');
+                    }
+                });
+            }
+            updateProgress();
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const progress = {};
+            checkboxes.forEach(checkbox => {
+                progress[checkbox.id] = checkbox.checked;
+            });
+            localStorage.setItem('argusPhotoChecklist', JSON.stringify(progress));
+        }
+
+        // Update progress bar and stats
+        function updateProgress() {
+            const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const percentage = Math.round((checkedCount / totalCount) * 100);
+            
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressBar').textContent = percentage + '%';
+            document.getElementById('completedCount').textContent = checkedCount;
+            document.getElementById('totalCount').textContent = totalCount;
+            document.getElementById('remainingCount').textContent = totalCount - checkedCount;
+        }
+
+        // Add event listeners to all checkboxes
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.parentElement.classList.add('completed');
+                } else {
+                    this.parentElement.classList.remove('completed');
+                }
+                saveProgress();
+                updateProgress();
+            });
+        });
+
+        // Export progress to JSON file
+        function exportChecklist() {
+            const progress = {};
+            checkboxes.forEach(checkbox => {
+                progress[checkbox.id] = checkbox.checked;
+            });
+            
+            const dataStr = JSON.stringify(progress, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'argus-photo-checklist-' + new Date().toISOString().slice(0,10) + '.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        // Import progress from JSON file
+        function importChecklist() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.readAsText(file, 'UTF-8');
+                reader.onload = readerEvent => {
+                    const content = readerEvent.target.result;
+                    const progress = JSON.parse(content);
+                    
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = progress[checkbox.id] || false;
+                        if (checkbox.checked) {
+                            checkbox.parentElement.classList.add('completed');
+                        } else {
+                            checkbox.parentElement.classList.remove('completed');
+                        }
+                    });
+                    
+                    saveProgress();
+                    updateProgress();
+                    alert('Progress imported successfully!');
+                }
+            }
+            
+            input.click();
+        }
+
+        // Reset all progress
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    checkbox.parentElement.classList.remove('completed');
+                });
+                saveProgress();
+                updateProgress();
+            }
+        }
+
+        // Load progress on page load
+        document.addEventListener('DOMContentLoaded', loadProgress);
+
+        // Auto-save every 30 seconds
+        setInterval(saveProgress, 30000);
+
+        // Save before page unload
+        window.addEventListener('beforeunload', saveProgress);
+    </script>
+</body>
+</html>
