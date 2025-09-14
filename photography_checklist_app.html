@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Photo Mission">
+    <title>Photography Mission Checklist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .task-completed {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgb(34, 197, 94);
+        }
+        .task-pending {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .deliverable-due {
+            background: rgba(245, 158, 11, 0.3);
+            border-color: rgb(245, 158, 11);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .day-header {
+            background: linear-gradient(135deg, #004AAD 0%, #0079FF 100%);
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .contact-urgent {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+            to { box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container mx-auto p-4 max-w-md">
+        <!-- Header -->
+        <div class="glass rounded-2xl p-6 mb-6 text-center">
+            <h1 class="text-2xl font-bold mb-2">📸 Photo Mission Control</h1>
+            <p class="text-sm opacity-90">Biofuels NA Summit 2025</p>
+            
+            <!-- Progress Overview -->
+            <div class="mt-4">
+                <div class="flex justify-between text-xs mb-2">
+                    <span>Progress</span>
+                    <span id="progressText">0/34 Complete</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2">
+                    <div id="progressBar" class="progress-bar bg-green-500 h-2 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urgent Contact -->
+        <div class="contact-urgent rounded-2xl p-4 mb-6 text-center">
+            <div class="font-bold text-white">⚡ URGENT ACTION</div>
+            <div class="text-sm text-white/90 mt-1">Call Lilja at 7:30 AM Monday</div>
+            <div class="text-xs text-white/80">831-869-7096</div>
+        </div>
+
+        <!-- Golden Rules Quick Ref -->
+        <div class="glass rounded-2xl p-4 mb-6">
+            <h2 class="font-bold text-center mb-3">🏆 Golden Rules</h2>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <div>
+                    <div class="text-green-400 font-semibold mb-1">✅ DO:</div>
+                    <ul class="space-y-1 text-white/80">
+                        <li>• Energy & smiles</li>
+                        <li>• Hunt for branding</li>
+                        <li>• Diverse shots</li>
+                        <li>• Wide room shots</li>
+                        <li>• Bright exposure</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-red-400 font-semibold mb-1">🚫 DON'T:</div>
+                    <ul class="space-y-1 text-white/80">
+                        <li>• People eating</li>
+                        <li>• Backs/backpacks</li>
+                        <li>• Empty seats</li>
+                        <li>• Bad expressions</li>
+                        <li>• Static panels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day Selector -->
+        <div class="flex mb-6 glass rounded-2xl p-1">
+            <button onclick="switchDay(1)" id="dayBtn1" class="flex-1 py-3 px-4 rounded-xl font-semibold transition-all">Day 1</button>
+            <button onclick="switchDay(2)" id="dayBtn2" class="flex-1 py-3 px-4 rounded-xl font-semibold transition-all">Day 2</button>
+            <button onclick="switchDay(3)" id="dayBtn3" class="flex-1 py-3 px-4 rounded-xl font-semibold transition-all">Day 3</button>
+        </div>
+
+        <!-- Day Content -->
+        <div id="dayContent"></div>
+
+        <!-- Stats Footer -->
+        <div class="glass rounded-2xl p-4 mt-6 text-center">
+            <div class="grid grid-cols-3 gap-4 text-sm">
+                <div>
+                    <div class="font-bold text-2xl" id="completedCount">0</div>
+                    <div class="opacity-80">Completed</div>
+                </div>
+                <div>
+                    <div class="font-bold text-2xl" id="deliverableCount">0</div>
+                    <div class="opacity-80">Deliverables</div>
+                </div>
+                <div>
+                    <div class="font-bold text-2xl" id="photosTarget">220+</div>
+                    <div class="opacity-80">Total Photos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tasks = {
+            1: {
+                title: "Monday - Day 1",
+                items: [
+                    { id: 'call-lilja', text: '📞 Call Lilja at 7:30 AM (831-869-7096)', type: 'urgent' },
+                    { id: 'early-arrival', text: '🏌️ Early Arrival: Golf & Venue Shots (7:15 AM)', type: 'photo' },
+                    { id: 'reg-coffee', text: '☕ Registration & Coffee Shots', type: 'photo' },
+                    { id: 'branding-hunt', text: '🎯 Brand Logo Hunt - Booths & Backdrops', type: 'photo' },
+                    { id: 'del1-upload', text: '⬆️ DELIVERABLE #1 (11 AM) - Reg, Coffee, Branding', type: 'deliverable', due: '11:00' },
+                    { id: 'workshop1', text: '📊 Dual Workshop Coverage', type: 'photo' },
+                    { id: 'lunch-shots', text: '🥗 Lunch Networking (avoid eating shots!)', type: 'photo' },
+                    { id: 'exhibitors', text: '🏢 Exhibitor Booth Tour', type: 'photo' },
+                    { id: 'del2-upload', text: '⬆️ DELIVERABLE #2 (3 PM) - Lunch, Exhibitors', type: 'deliverable', due: '15:00' },
+                    { id: 'afternoon-sessions', text: '🎤 Afternoon Conference Sessions', type: 'photo' },
+                    { id: 'del3-upload', text: '⬆️ DELIVERABLE #3 (5 PM) - Afternoon Sessions', type: 'deliverable', due: '17:00' },
+                    { id: 'reception-prep', text: '🥂 Evening Reception Coverage', type: 'photo' }
+                ]
+            },
+            2: {
+                title: "Tuesday - Day 2",
+                items: [
+                    { id: 'del4-upload', text: '⬆️ DELIVERABLE #4 (8 AM) - Monday Reception', type: 'deliverable', due: '08:00' },
+                    { id: 'busy-reg', text: '🚶‍♀️ Busy Registration Day Coverage', type: 'photo' },
+                    { id: 'keynotes', text: '🎯 Main Keynote Presentations', type: 'photo' },
+                    { id: 'topsoe-station', text: '🍪 Topsoe Snack Station (9:50 AM)', type: 'sponsor' },
+                    { id: 'morning-panels', text: '💼 Morning Panel Discussions', type: 'photo' },
+                    { id: 'del5-missing', text: '⬆️ DELIVERABLE #5 (Missing from timeline)', type: 'deliverable' },
+                    { id: 'lunch-networking', text: '🤝 Lunch Networking Sessions', type: 'photo' },
+                    { id: 'del6-upload', text: '⬆️ DELIVERABLE #6 (1 PM) - Lunch, Morning Panels', type: 'deliverable', due: '13:00' },
+                    { id: 'afternoon-panels', text: '📋 Afternoon Panel Coverage', type: 'photo' },
+                    { id: 'del7-implied', text: '⬆️ DELIVERABLE #7 (Implied afternoon)', type: 'deliverable' },
+                    { id: 'evening-reception', text: '🎉 Tuesday Evening Reception', type: 'photo' },
+                    { id: 'del8-implied', text: '⬆️ DELIVERABLE #8 (Implied evening)', type: 'deliverable' }
+                ]
+            },
+            3: {
+                title: "Wednesday - Day 3",
+                items: [
+                    { id: 'del9-upload', text: '⬆️ DELIVERABLE #9 (8 AM) - Tuesday Reception', type: 'deliverable', due: '08:00' },
+                    { id: 'final-sessions', text: '🎤 Final Conference Sessions', type: 'photo' },
+                    { id: 'closing-networking', text: '👥 Closing Networking', type: 'photo' },
+                    { id: 'del10-upload', text: '⬆️ DELIVERABLE #10 (11 AM) - Morning Shots', type: 'deliverable', due: '11:00' },
+                    { id: 'closing-remarks', text: '🏁 Closing Remarks & Final Shots', type: 'photo' },
+                    { id: 'del11-final', text: '⬆️ DELIVERABLE #11 (Final compilation)', type: 'deliverable' },
+                    { id: 'final-curation', text: '📁 Final Album Curation (220+ photos)', type: 'admin' },
+                    { id: 'google-drive', text: '📤 Upload to Google Drive for Teri Arri', type: 'admin' }
+                ]
+            }
+        };
+
+        let currentDay = 1;
+        let completedTasks = new Set();
+
+        // Load saved progress
+        if (localStorage.getItem('photoMissionProgress')) {
+            completedTasks = new Set(JSON.parse(localStorage.getItem('photoMissionProgress')));
+        }
+
+        function saveProgress() {
+            localStorage.setItem('photoMissionProgress', JSON.stringify([...completedTasks]));
+        }
+
+        function toggleTask(taskId) {
+            if (completedTasks.has(taskId)) {
+                completedTasks.delete(taskId);
+            } else {
+                completedTasks.add(taskId);
+            }
+            saveProgress();
+            updateProgress();
+            renderDay(currentDay);
+        }
+
+        function updateProgress() {
+            const total = Object.values(tasks).reduce((sum, day) => sum + day.items.length, 0);
+            const completed = completedTasks.size;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = `${completed}/${total} Complete`;
+            document.getElementById('completedCount').textContent = completed;
+            
+            // Update deliverable count
+            const deliverables = Object.values(tasks).reduce((sum, day) => {
+                return sum + day.items.filter(item => item.type === 'deliverable').length;
+            }, 0);
+            document.getElementById('deliverableCount').textContent = deliverables;
+        }
+
+        function getTaskIcon(type) {
+            switch(type) {
+                case 'urgent': return '⚡';
+                case 'deliverable': return '⬆️';
+                case 'photo': return '📸';
+                case 'sponsor': return '🎯';
+                case 'admin': return '📋';
+                default: return '✅';
+            }
+        }
+
+        function getTaskClass(type, isCompleted) {
+            let baseClass = 'glass rounded-xl p-4 mb-3 border-2 transition-all duration-300 ';
+            
+            if (isCompleted) {
+                baseClass += 'task-completed ';
+            } else if (type === 'deliverable' && isDueNow(type)) {
+                baseClass += 'deliverable-due ';
+            } else {
+                baseClass += 'task-pending ';
+            }
+            
+            return baseClass;
+        }
+
+        function isDueNow(type) {
+            // Simple logic - you could enhance this with actual time checking
+            return type === 'deliverable';
+        }
+
+        function renderDay(day) {
+            const dayData = tasks[day];
+            const content = document.getElementById('dayContent');
+            
+            let html = `
+                <div class="day-header rounded-2xl p-4 mb-4 text-center">
+                    <h2 class="text-xl font-bold">${dayData.title}</h2>
+                </div>
+            `;
+            
+            dayData.items.forEach(item => {
+                const isCompleted = completedTasks.has(item.id);
+                const icon = getTaskIcon(item.type);
+                const taskClass = getTaskClass(item.type, isCompleted);
+                
+                html += `
+                    <div class="${taskClass}" onclick="toggleTask('${item.id}')">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center flex-1">
+                                <span class="text-2xl mr-3">${icon}</span>
+                                <span class="text-sm ${isCompleted ? 'line-through opacity-60' : ''}">${item.text}</span>
+                            </div>
+                            <div class="ml-2">
+                                <div class="w-6 h-6 rounded-full border-2 ${isCompleted ? 'bg-green-500 border-green-500' : 'border-white/50'} flex items-center justify-center">
+                                    ${isCompleted ? '✓' : ''}
+                                </div>
+                            </div>
+                        </div>
+                        ${item.due ? `<div class="text-xs opacity-70 mt-2">Due: ${item.due}</div>` : ''}
+                    </div>
+                `;
+            });
+            
+            content.innerHTML = html;
+        }
+
+        function switchDay(day) {
+            currentDay = day;
+            
+            // Update button states
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`dayBtn${i}`);
+                if (i === day) {
+                    btn.className = 'flex-1 py-3 px-4 rounded-xl font-semibold transition-all bg-white/20 text-white';
+                } else {
+                    btn.className = 'flex-1 py-3 px-4 rounded-xl font-semibold transition-all text-white/60';
+                }
+            }
+            
+            renderDay(day);
+        }
+
+        // Initialize
+        updateProgress();
+        switchDay(1);
+
+        // Add to home screen prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+    </script>
+</body>
+</html>
